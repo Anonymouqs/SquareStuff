@@ -20,3 +20,5 @@ shape = SubResource( 1 )
 [node name="basic_platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 48 )
 scale = Vector2( 3.2, 0.8 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
