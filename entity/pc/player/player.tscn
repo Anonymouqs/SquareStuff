@@ -3,7 +3,7 @@
 [ext_resource path="res://entity/pc/player/player.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 8, 7.76033 )
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 1 )
