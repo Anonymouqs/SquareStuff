@@ -16,7 +16,7 @@ func _on_Area2D_body_entered(body):
 	rise = true
 
 func _on_Area2D_body_exited(body):
-	if not reset:
+	if reset:
 		rise = false
 
 func _physics_process(delta):

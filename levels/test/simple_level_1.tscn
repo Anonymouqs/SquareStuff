@@ -1,20 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://map/blocks/basic_platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://map/blocks/faith_platform/faith_platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entity/pc/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://themes/elysium.tres" type="Theme" id=4]
+[ext_resource path="res://fonts/imported/liberation_sans_reg.tres" type="DynamicFont" id=5]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="terrain" type="Node2D" parent="."]
 
 [node name="basic_platform" parent="terrain" instance=ExtResource( 1 )]
-position = Vector2( 108, 44 )
+position = Vector2( 96, 44 )
 scale = Vector2( 10.8, 2.8 )
+
+[node name="faith_platform" parent="terrain" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 264, 0 )
+
+[node name="Area2D" parent="terrain/faith_platform" index="1"]
+position = Vector2( -16, 0 )
+
+[node name="basic_platform" parent="terrain/faith_platform" index="2"]
+position = Vector2( 0, 160 )
 
 [node name="faith_platform2" parent="terrain" instance=ExtResource( 2 )]
 editor/display_folded = true
-position = Vector2( 368, 32 )
+position = Vector2( 384, 0 )
+
+[node name="Area2D" parent="terrain/faith_platform2" index="1"]
+position = Vector2( -16, 0 )
+
+[node name="basic_platform" parent="terrain/faith_platform2" index="2"]
+position = Vector2( 0, 160 )
+
+[node name="faith_platform3" parent="terrain" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 504, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 8, 8 )
@@ -22,8 +44,15 @@ position = Vector2( 8, 8 )
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Node2D"]
-margin_left = 216.0
-margin_top = -16.0
-margin_right = 256.0
-margin_bottom = -2.0
-text = "Fuck"
+margin_left = 192.0
+margin_top = -88.0
+margin_right = 339.0
+margin_bottom = -52.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Heck reee"
+
+[editable path="terrain/faith_platform"]
+
+[editable path="terrain/faith_platform2"]
