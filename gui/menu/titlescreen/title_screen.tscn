@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://themes/elegant.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/imported/liberation_sans_reg.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/liberation-sans/LiberationSans-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://gui/button/fade_button/fade_button.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 13
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = ExtResource( 2 )
+Label/styles/normal = null
+
+[sub_resource type="DynamicFont" id=3]
+size = 150
+font_data = ExtResource( 3 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_right = 1022.0
+margin_bottom = 596.0
+
+[node name="Logo" type="Label" parent="Menu"]
+margin_right = 1022.0
+margin_bottom = 168.0
+theme = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Square"
+align = 1
+valign = 3
+
+[node name="Center" type="HBoxContainer" parent="Menu"]
+margin_top = 172.0
+margin_right = 1022.0
+margin_bottom = 206.0
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/Center"]
+margin_right = 1022.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+
+[node name="Button" parent="Menu/Center/Buttons" instance=ExtResource( 4 )]
+margin_bottom = 15.0
+
+[node name="Button2" parent="Menu/Center/Buttons" instance=ExtResource( 4 )]
+margin_top = 19.0
+margin_bottom = 34.0

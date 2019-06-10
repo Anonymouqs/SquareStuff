@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "_origin",
+"class": "_entity",
+"language": "GDScript",
+"path": "res://core/_entity.gd"
+}, {
+"base": "Node",
+"class": "_origin",
+"language": "GDScript",
+"path": "res://core/_origin.gd"
+}, {
+"base": "_entity",
+"class": "_pc",
+"language": "GDScript",
+"path": "res://core/_pc.gd"
+} ]
+_global_script_class_icons={
+"_entity": "",
+"_origin": "",
+"_pc": ""
+}
+
+[application]
+
+config/name="Square"
+
+[rendering]
+
+environment/default_clear_color=Color( 1, 1, 1, 1 )

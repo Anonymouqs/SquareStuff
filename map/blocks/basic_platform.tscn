@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="basic_platform" type="Polygon2D"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0, 4.17233e-007 )
+scale = Vector2( 0.8, 0.8 )
+polygon = PoolVector2Array( 10, -10, 10, 10, -10, 10, -10, -10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
