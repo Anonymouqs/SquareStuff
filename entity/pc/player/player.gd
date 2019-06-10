@@ -3,7 +3,7 @@ export var speed = 50
 export var accleration = 0.2
 export var deceleration = 0.1
 export var gravity = 10 #between 1 and 0, uses lerp
-export var jump_speed = 200
+export var jump_speed = 175
 # Declare member variables here. Examples:
 
 func _ready():
