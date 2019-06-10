@@ -131,6 +131,7 @@ tracks/3/keys = {
 [node name="Button" type="Button"]
 margin_right = 185.0
 margin_bottom = 61.0
+size_flags_horizontal = 3
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -143,15 +144,6 @@ tree_root = SubResource( 6 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/blend_position = 1.20616
-
-[node name="Label" type="Label" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 10.0
-margin_bottom = 10.0
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Text Text"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/black = SubResource( 7 )
