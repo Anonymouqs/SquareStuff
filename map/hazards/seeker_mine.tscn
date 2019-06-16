@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://map/hazards/seeker_mine.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 117.0
+
+[node name="seeker_mine" type="Polygon2D"]
+position = Vector2( 0, 4.17233e-007 )
+scale = Vector2( 0.8, 0.8 )
+color = Color( 0.352941, 0, 0, 1 )
+polygon = PoolVector2Array( 10, -10, 10, 10, -10, 10, -10, -10 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Aggression_Area" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aggression_Area"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Aggression_Area" to="." method="_on_Aggression_Area_body_entered"]

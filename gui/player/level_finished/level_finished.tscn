@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/liberation-sans/LiberationSans-Regular.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Control
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimationPlayer.play(\"instance\")
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "instance"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="level_finished" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1024.0
+margin_bottom = 597.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 597.0
+color = Color( 0, 0, 0, 0.866667 )
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_top = 262.0
+margin_right = 1024.0
+margin_bottom = 334.0
+custom_fonts/font = SubResource( 1 )
+text = "Level_Finished"
+align = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/instance = SubResource( 2 )
