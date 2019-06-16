@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://core/_entity.gd"
 }, {
+"base": "_map",
+"class": "_hazard",
+"language": "GDScript",
+"path": "res://core/_hazard.gd"
+}, {
 "base": "_origin",
 "class": "_map",
 "language": "GDScript",
@@ -31,6 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "_entity": "",
+"_hazard": "",
 "_map": "",
 "_origin": "",
 "_pc": ""

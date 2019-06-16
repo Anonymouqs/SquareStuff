@@ -9,6 +9,8 @@ export var jump_speed = 175
 func _ready():
 	pass # Replace with function body.
 
+func player(): #
+	pass
 
 func _process(delta) -> void:
 	
