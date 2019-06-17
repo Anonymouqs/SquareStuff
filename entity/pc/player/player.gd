@@ -7,6 +7,7 @@ export var jump_speed = 175
 # Declare member variables here. Examples:
 
 func _ready():
+	player_gui_path = get_tree().get_root().find_node("player_gui", true, false)
 	pass # Replace with function body.
 
 func player(): #
@@ -28,3 +29,6 @@ func _process(delta) -> void:
 	#Gravity
 	motion.y += gravity
 	motion = controller.move_and_slide(motion)
+
+func disp_level_finished():
+	player_gui_path.finish_level()

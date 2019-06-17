@@ -4,6 +4,7 @@ class_name _pc
 # var a = 2
 # var b = "text"
 export var controller_path = ""
+export var player_gui_path = ""
 
 var controller: KinematicBody2D
 var motion = Vector2(0,0)
