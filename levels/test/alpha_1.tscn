@@ -1,54 +1,161 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://gui/player/level_display/default_level_display/player_gui.tscn" type="PackedScene" id=1]
-[ext_resource path="res://entity/pc/player/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://map/blocks/basic_platform.tscn" type="PackedScene" id=3]
-[ext_resource path="res://map/hazards/seeker_mine.tscn" type="PackedScene" id=4]
-[ext_resource path="res://map/blocks/faith_platform/faith_platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entity/pc/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://map/blocks/basic_platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://map/hazards/seeker_mine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://map/blocks/faith_platform/faith_platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://map/level_flow/level_finished/level_finished.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui/player/level_display/default_level_display/player_gui.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Viewport" type="Viewport" parent="."]
-
-[node name="player_gui" parent="Viewport" instance=ExtResource( 1 )]
-
-[node name="player" parent="." instance=ExtResource( 2 )]
+[node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 48, 64 )
 
 [node name="terrain" type="Node2D" parent="."]
+editor/display_folded = true
 
-[node name="basic_platform" parent="terrain" instance=ExtResource( 3 )]
+[node name="basic_platform" parent="terrain" instance=ExtResource( 2 )]
 position = Vector2( 144, 108 )
 scale = Vector2( 18.4, 3.6 )
 
-[node name="seeker_mine" parent="terrain" instance=ExtResource( 4 )]
+[node name="seeker_mine" parent="terrain" instance=ExtResource( 3 )]
 position = Vector2( 224, 56 )
 
-[node name="basic_platform2" parent="terrain" instance=ExtResource( 3 )]
+[node name="basic_platform2" parent="terrain" instance=ExtResource( 2 )]
 position = Vector2( 144.8, 55.2 )
 scale = Vector2( 0.72, 2.32 )
 
-[node name="faith_platform" parent="terrain" instance=ExtResource( 5 )]
+[node name="faith_platform" parent="terrain" instance=ExtResource( 4 )]
 position = Vector2( 472, 64 )
-rise_speed = 0.05
+rise_speed = 0.025
 
 [node name="rise_pos" parent="terrain/faith_platform" index="0"]
 position = Vector2( 0, -248 )
 
-[node name="faith_platform3" parent="terrain" instance=ExtResource( 5 )]
+[node name="faith_platform3" parent="terrain" instance=ExtResource( 4 )]
 position = Vector2( 552, -184 )
-rise_speed = 0.01
+rise_speed = 0.005
 
 [node name="rise_pos" parent="terrain/faith_platform3" index="0"]
-position = Vector2( 0, -248 )
+position = Vector2( 0, -799.482 )
 
-[node name="seeker_mine2" parent="terrain" instance=ExtResource( 4 )]
-position = Vector2( 320, 48 )
+[node name="seeker_mine" parent="terrain/faith_platform3" instance=ExtResource( 3 )]
+position = Vector2( -40, -88 )
+
+[node name="faith_platform4" parent="terrain" instance=ExtResource( 4 )]
+position = Vector2( 552, -184 )
+rise_speed = 0.005
+
+[node name="seeker_mine2" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 656, -296 )
 scale = Vector2( 0.64, 0.64 )
 
-[node name="faith_platform2" parent="terrain" instance=ExtResource( 5 )]
+[node name="seeker_mine8" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 662.4, -409.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine12" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 478.4, -465.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine16" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 510.4, -617.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine19" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 656, -777.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine22" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 502.4, -937.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine24" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 494.4, -785.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine4" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 656, -256 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine10" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 662.4, -369.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine11" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 478.4, -425.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine15" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 510.4, -577.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine18" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 656, -737.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine21" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 502.4, -897.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine25" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 494.4, -745.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine5" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 624, -280 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine9" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 630.4, -393.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine13" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 446.4, -449.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine14" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 478.4, -601.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine17" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 624, -761.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="basic_platform3" parent="terrain" instance=ExtResource( 2 )]
+position = Vector2( 836, -970.56 )
+scale = Vector2( 25.2, 1.056 )
+
+[node name="seeker_mine20" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 470.4, -921.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine23" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 462.4, -769.6 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine6" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 432, -384 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine7" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 368, -256 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="seeker_mine3" parent="terrain" instance=ExtResource( 3 )]
+position = Vector2( 512, -272 )
+
+[node name="faith_platform2" parent="terrain" instance=ExtResource( 4 )]
 editor/display_folded = true
 position = Vector2( 392, 64 )
+
+[node name="level_end" parent="." instance=ExtResource( 5 )]
+position = Vector2( 664, -1016 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="player_gui" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [editable path="terrain/faith_platform"]
 
