@@ -5,8 +5,12 @@ export var deceleration = 0.1
 export var gravity = 10 #between 1 and 0, uses lerp
 export var jump_speed = 175
 # Declare member variables here. Examples:
+func set_health(new_health):
+	health = new_health
+	player_gui_path.disp_lives(health)
 
 func _ready():
+	health = 100
 	player_gui_path = get_tree().get_root().find_node("player_gui", true, false)
 	pass # Replace with function body.
 

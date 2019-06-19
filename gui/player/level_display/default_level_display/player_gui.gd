@@ -9,11 +9,11 @@ func _ready():
 	
 	pass # Replace with function body.
 
-func disp_score(score):
-	$score.text = "Score: " + score
+func disp_score(scorenum):
+	$VBoxContainer/score.text = "Score: " + convert(scorenum, TYPE_STRING)
 
-func disp_lives(lives):
-	$lives.text = "Lives: " + lives
+func disp_lives(livesnum):
+	$VBoxContainer/health.text = "Lives: " + convert(livesnum, TYPE_STRING)
 
 func finish_level():
 	var scene = load("res://gui/player/level_finished/level_finished.tscn")
